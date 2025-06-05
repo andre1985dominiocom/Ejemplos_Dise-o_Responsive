@@ -1,0 +1,205 @@
+/*C. Actividades de apropiación del conocimiento.
+Llegó el momento de poner en práctica lo aprendido. Vas a desarrollar ejemplos
+técnicos que implementen media queries, aplicarás distintos breakpoints y compararás
+enfoques mobile y desktop first.*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.container {
+    text-align: left;
+    margin: 20px;
+    white-space: nowrap;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: green;
+}
+
+.card {
+    background-color: green;
+    width: 300px;
+    margin: 40px;
+    border-radius: 10px;
+}
+
+.titulo {
+    text-align: center;
+    color: tomato;
+    margin-top: 0px;
+}
+
+.parrafo {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    margin: 20px;
+}
+
+.boton {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    color: #000;
+    background-color: gold;
+    border-radius: 10px;
+}
+
+.imagen {
+    width: 150px;
+    margin-left: 80px;
+    border-radius: 10px;
+
+}
+/*1. Crea una página HTML con diseño adaptativo que cambie de color de fondo
+usando media queries.*/
+
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+        background: gray;
+    }
+}
+
+/*2. Define al menos tres breakpoints comunes (ej. 768px, 992px, 1200px). Y cambia la
+disposición de un elemento*/
+
+@media (min-width: 992px) {
+    .new {
+        font-size: 16px;
+        color: blueviolet;
+    }
+    .secret {
+        font-size: 16px;
+        color: aqua;
+    }
+    .basic {
+        font-size: 16px;
+        color: hotpink;
+    }
+}
+
+/*3. Implementa una estrategia “mobile first” en un proyecto simple.*/
+@media (max-width: 955px) {
+    .card {
+        font-size: 16px;
+        margin: 0 auto;
+    }
+    .titulo {
+        font-size: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .parrafo {
+        font-size: 16px;
+
+    }
+    .boton {
+        font-size: 16px;
+        margin-top: -15px;
+    }
+    .imagen {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .new {
+        display: inline-block;
+        margin-top: 50px;
+    }
+    .secret {
+        display: inline-block;
+        margin-top: 50px;
+    }
+    .basic {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container1 > div {
+    height: 100px;
+    flex: max(400px, (100% - 20px)/3);
+    background: violet;
+}
+
+/*5. Modifica el diseño de un menú según el tamaño del dispositivo.*/
+.menu button{
+    display: block;
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+.nav{
+    display: none;
+}
+
+/*4. Implementa una estrategia “desktop first” en otro proyecto.*/
+@media (min-width: 1000px) {
+    .container1 {
+        width: 50%;
+        margin: 10px;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+    .menu  button{
+        display: none;
+    }
+    .nav{
+        display: block;
+    }
+}
+
+.menu {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.nav .navegacion {
+    list-style: none;
+}
+
+.nav .navegacion li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.nav .navegacion li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500px;
+    transition: color 0.3s ease;
+}
+
+.navegacion li a:hover {
+    color: gold;
+}
+
+
+
