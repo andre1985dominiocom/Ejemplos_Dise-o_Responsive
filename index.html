@@ -48,7 +48,41 @@
         </button>
     </div>
 
-
-    
+    <section class="galeria">
+        <article class="image_1">
+            <h2>Goku</h2>
+            <img src="Assets/goku_normal.webp" alt="Imagen Goku"> 
+            <p><span class="Fuerza">F</span>uerza y Poder</p>
+        </article>
+        <article class="image_2">
+            <h2>Gohan</h2>
+            <img src="Assets/gohan.webp" alt="Imagen Gohan">
+            <p><span class="Fuerza">S</span>abiduria es Poder</p>
+        </article>
+        <article class="image_3">
+            <h2>Vegeta</h2>
+            <img src="Assets/vegeta_normal.webp" alt="Imagen Vegeta">
+            <p><span class="Fuerza">L</span>a Fuerza del Espiritu</p>
+        </article>
+    </section>
+    <form class="formulario">
+        <h3>Formulario de Contacto</h3>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Escribe tu email" required>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+    <picture class="picture-container">
+        <source media="(min-width: 64em)" srcset="Assets/imagen_grande.jpg">
+        <source media="(min-width: 48em)" srcset="Assets/imagen_mediana.jpg">
+        <source media="(min-width: 47.99em)" srcset="Assets/imagen_pequena.jpg">
+        <img src="Assets/pexels-sebastiaan9977-1097456.jpg"
+            alt="Imagen adaptable según el tamaño de pantalla"
+            class="responsive-img">
+    </picture>
 </body>
 </html>

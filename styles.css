@@ -3,7 +3,6 @@ Llegó el momento de poner en práctica lo aprendido. Vas a desarrollar ejemplos
 técnicos que implementen media queries, aplicarás distintos breakpoints y compararás
 enfoques mobile y desktop first.*/
 
-
 * {
     margin: 0;
     padding: 0;
@@ -201,5 +200,231 @@ disposición de un elemento*/
     color: gold;
 }
 
+/*6. Cambia el tamaño de fuentes con media queries según el ancho del viewport.*/
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .titulo {
+        font-size: 24px;
+    }
+    .parrafo {
+        font-size: 20px;
+    }
+    .basic {
+        font-size: 18px;
+    }
+    .new {
+        font-size: 18px;
+    }
+}
 
+.galeria {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
 
+.galeria article {
+    display: inline-block;
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 1%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    vertical-align: top;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.galeria article:hover {
+    transform: translateY(-5px);
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.galeria h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.galeria p {
+    font-size: 1em;
+}
+
+.Fuerza {
+    font-weight: bold;
+    color: #e53935;
+}
+
+/*7. Modifica la galería de Goku que se adapte con columnas variables.*/
+@media (min-width: 600px) {
+    .galeria article {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    /*8. Simula un diseño de tarjeta que se apile en móviles y se alinee en escritorio.*/
+    }
+}
+
+/*9. Establece estilos para impresión usando media queries*/
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+    .card {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+    .titulo, .parrafo, .boton {
+        color: black;
+        font-size: 12px;
+    }
+    .imagen {
+        display: none; /*Oculta imágenes al imprimir*/
+    }
+    .nav {
+        display: none; /*Oculta navegación al imprimir*/
+    }
+    .galeria article {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none; /*Elimina sombras al imprimir*/
+    }
+    .galeria img {
+        width: 100%; /*Asegura que las imágenes se ajusten al ancho del papel*/
+    }
+    .galeria h2, .galeria p {
+        font-size: 12px; /*Reduce el tamaño de fuente para impresión*/
+    }
+    .menu {
+        display: none; /*Oculta el menú al imprimir*/
+    }
+    .container1 {
+        display: block; /*Cambia el diseño a bloque para impresión*/
+    }
+    .container1 > div {
+        width: 100%; /*Asegura que los elementos ocupen todo el ancho*/
+        margin-bottom: 10px; /*Añade espacio entre elementos*/
+    }
+    .navegacion li {
+        display: block; /*Cambia a bloque para impresión*/
+        margin-right: 0; /*Elimina margen derecho*/
+        margin-bottom: 5px; /*Añade espacio entre elementos del menú*/
+    }
+    .navegacion li a {
+        font-size: 12px; /*Reduce el tamaño de fuente para impresión*/
+    }
+    .boton {
+        display: none; /*Oculta botones al imprimir*/
+    }
+    .titulo {
+        font-size: 14px; /*Reduce el tamaño de fuente del título para impresión*/
+    }
+    .parrafo {
+        font-size: 12px; /*Reduce el tamaño de fuente del párrafo para impresión*/
+    }
+    .basic, .new, .secret {
+        font-size: 12px; /*Reduce el tamaño de fuente de los textos*/
+    }
+}
+
+.formulario {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.625rem;
+    background-color: beige;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 0.0625rem;
+    margin-bottom: 1rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.3125rem;
+    box-sizing: border-box;
+}
+
+.formulario textarea {
+    width: 98%;
+}
+
+.formulario button {
+    padding: 0.625rem 1.25rem;
+    background-color: #4cAF50;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    margin-right: 0.625rem;
+    font-size: 1rem;
+}
+
+/*10. Integra un formulario que se reorganice visualmente según el dispositivo.*/
+@media (max-width: 40em) {
+    .formulario {
+        display: block;
+        width: 100%;
+    }
+    .formulario input, .formulario textarea {
+        width: 100%;
+        margin-bottom: 0.3125rem;
+    }
+}
+
+/*11. Combina media queries con unidades relativas (em/rem).*/
+@media (min-width: 40em) {
+    .form-row {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+    .formulario textarea {
+        width: 100%;
+    }
+}
+
+/*12. Usa una imagen distinta según el tamaño de la pantalla.*/
+.picture-container {
+    max-width: 56.25rem;
+    margin: 2rem auto;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 0.625rem;
+}
+
+.responsive-img  {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.625rem;
+}
+/*La imagen se adapta solo para pantallas pequeñas pero en  pantallas grandes no se muestra la imagen*/
